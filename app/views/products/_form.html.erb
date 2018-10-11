@@ -12,41 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, 'Nome' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image, 'imagem' %>
     <%= form.file_field :image %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, 'Descrição' %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :tension %>
+    <%= form.label :tension, 'Tensão' %>
     <%= form.number_field :tension %>
   </div>
 
   <div class="field">
-    <%= form.label :stock %>
+    <%= form.label :stock, 'Estoque' %>
     <%= form.number_field :stock %>
   </div>
 
   <div class="field">
-    <%= form.label :value %>
+    <%= form.label :value, 'Valor' %>
     <%= form.text_field :value %>
   </div>
 
   <div class="field">
-    <%= form.label :discount %>
+    <%= form.label :discount, 'Desconto' %>
     <%= form.text_field :discount %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Enviar' %>
   </div>
 <% end %>
