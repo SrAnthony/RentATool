@@ -1,0 +1,68 @@
+.index-main
+  background-color: #f1f1f1
+  height: 100vh
+
+.index-grid
+  display: grid
+  grid-template-columns: 230px 1fr 230px
+  grid-template-areas: 'categories main best-seller'
+  grid-gap: 7px
+  padding-top: 8px
+
+  nav[data-grid='categories']
+    grid-area: categories
+  main[data-grid='main']
+    grid-area: main
+  aside[data-grid='best-seller']
+    grid-area: best-seller
+
+.search-field
+  background-color: $primary-color
+  padding: 10px
+  display: flex
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
+  margin-bottom: 5px
+  border-radius: 3px
+  width: 100%
+  input
+    width: 80%
+    padding: 5px
+    border: none
+  button
+    width: 20%
+    margin-left: 5px
+    background-color: darken($primary-color, 15%)
+    border: none
+    color: white
+    cursor: pointer
+    font-weight: bold
+    border-radius: 3px
+    &:hover
+      background-color: darken($primary-color, 25%)
+
+.panel
+  width: 100%
+  background-color: $primary-color
+  border-radius: 3px
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
+  .panel-title
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    background-color: darken($primary-color, 15%)
+    padding: 5px 0
+  h3
+    color: white
+    text-align: center
+    font-weight: normal
+    margin: 0
+  .panel-list
+    li a
+      color: white
+      display: block
+      width: 100%
+      padding: 12px
+      text-align: center
+      font-weight: 300
+      transition: all .1s
+      &:hover
+        background-color: darken($primary-color, 5%)

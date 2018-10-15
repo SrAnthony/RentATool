@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
 @import url('https://fonts.googleapis.com/css?family=Lobster')
 
+// === Cores
+$primary-color: #5995da
+
 // === Principal
+*
+  box-sizing: border-box
 body
   margin: 0
   padding: 0
@@ -17,3 +22,15 @@ body
 .container
   width: 100%
   max-width: 1300px
+  margin: auto
+
+.no-decoration
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+
+.text-white
+  color: white
+
+.small-scale:hover
+  transform: scale(1.01)
