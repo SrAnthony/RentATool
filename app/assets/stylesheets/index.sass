@@ -1,6 +1,7 @@
 .index-main
   background-color: #f1f1f1
-  height: 100vh
+  min-height: calc(100vh - 150px)
+  height: 100%
 
 .index-grid
   display: grid
@@ -40,29 +41,34 @@
     &:hover
       background-color: darken($primary-color, 25%)
 
-.panel
-  width: 100%
-  background-color: $primary-color
+.products-list
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+.product-item
+  width: 200px
+  background: white
   border-radius: 3px
-  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
-  .panel-title
-    border-top-left-radius: 3px
-    border-top-right-radius: 3px
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2)
+  margin: 10px
+  .product-footer
+    display: block
+    padding: 10px
     background-color: darken($primary-color, 15%)
-    padding: 5px 0
-  h3
+
+  .product-image
+    transition: transform .1s
+    &:hover
+      transform: scale(1.03)
+      cursor: zoom-in
+    img
+      width: 100%
+      height: 100%
+      border-radius: 3px
+  .product-name
+    text-align: center
+    color: white
+  .product-price
     color: white
     text-align: center
-    font-weight: normal
-    margin: 0
-  .panel-list
-    li a
-      color: white
-      display: block
-      width: 100%
-      padding: 12px
-      text-align: center
-      font-weight: 300
-      transition: all .1s
-      &:hover
-        background-color: darken($primary-color, 5%)
+    font-weight: bold

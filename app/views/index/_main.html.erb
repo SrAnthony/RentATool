@@ -1,0 +1,27 @@
+<main data-grid="main">
+  <h3 class="font-weight-normal">Lista de produtos</h3>
+
+  <div class="products">
+    <ul class="list-unstyled products-list">
+      <% @products.each do |product| %>
+        <li class="product-item">
+          <div class="product-image">
+            <% if product.image.attached? %>
+              <%= image_tag product.image %>
+            <% else %>
+              <%= image_tag 'default-image.png' %>
+            <% end %>
+          </div>
+          <%= link_to product, class: 'product-footer no-decoration' do %>
+            <div class="product-name">
+              <%= product.name %>
+            </div>
+            <div class="product-price">
+              R$ <%= number_with_precision product.value, precision: 2, separator: ',' %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</main>
