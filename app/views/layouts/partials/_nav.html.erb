@@ -8,7 +8,9 @@
 
     <div class="cart-button">
       <a href="#" class="small-scale">
-        <i class="lnr lnr-cart"></i> Ver carrinho
+        <%= link_to cart_path do %>
+          <i class="lnr lnr-cart"></i> Ver carrinho
+        <% end %>
       </a>
     </div>
 

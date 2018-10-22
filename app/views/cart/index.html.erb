@@ -1,0 +1,7 @@
+<h1> Carrinho </h1>
+<% @items.each do |item| %>
+  <p>
+    <%= item.name %>
+    <%= link_to "Remover", remove_item_from_cart_path(item.id), method: :post %>
+  </p>
+<% end %>

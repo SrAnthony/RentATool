@@ -25,6 +25,11 @@
           <% end %>
         </li>
       <% end %>
+      <% if @products.empty? %>
+        <p class="text-center">
+          Nenhum produto encontrado :(
+        </p>
+      <% end %>
     </ul>
   </div>
 </main>

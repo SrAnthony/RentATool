@@ -54,7 +54,8 @@
       </p>
 
       <div class="product-buttons">
-        <a href="#" class="button success">Adicionar ao carrinho</a>
+        <%= link_to 'Adicionar ao carrinho', add_item_to_cart_path(@product.id), class: 'button success text-center',
+            method: :post %>
       </div>
 
     </div>

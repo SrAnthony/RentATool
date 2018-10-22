@@ -4,24 +4,13 @@
       <h3>Categorias</h3>
     </div>
     <ul class="list-unstyled panel-list">
-      <li>
-        <a href="#" class="no-decoration small-scale">Marcenaria</a>
-      </li>
-      <li>
-        <a href="#" class="no-decoration small-scale">Jardinagem</a>
-      </li>
-      <li>
-        <a href="#" class="no-decoration small-scale">Limpeza</a>
-      </li>
-      <li>
-        <a href="#" class="no-decoration small-scale">Escritório</a>
-      </li>
-      <li>
-        <a href="#" class="no-decoration small-scale">Mecânica</a>
-      </li>
-      <li>
-        <a href="#" class="no-decoration small-scale">Outros</a>
-      </li>
+      <% @categories.each do |category| %>
+        <li>
+          <a href="/?category=<%= category.id %>" class="no-decoration small-scale">
+            <%= category.name %>
+          </a>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="search-field">
