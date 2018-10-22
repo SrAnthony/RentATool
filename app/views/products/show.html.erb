@@ -1,43 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div class="index-main">
+  <div class="index-grid container">
 
-<p>
-  <strong>Nome:</strong>
-  <%= @product.name %>
-</p>
+  <%= render 'index/categories' %>
 
-<p>
-  <strong>Imagem:</strong>
-  <% if @product.image.attached? %>
-    <%= image_tag @product.image, width: '100px' %>
-  <% else %>
-    Nenhuma imagem enviada
-  <% end %>
-</p>
+  <section>
+    <div class="fl-block breadcrumb">
+      Início > Produtos > <%= @product.category&.name %>
+    </div>
 
-<p>
-  <strong>Descrição:</strong>
-  <%= @product.description %>
-</p>
+    <div class="product-show fl-block">
 
-<p>
-  <strong>Tensão:</strong>
-  <%= @product.tension %>
-</p>
+    <div class="product-image">
+      <% if @product.image.attached? %>
+      <%= image_tag @product.image%>
+      <% else %>
+      <%= image_tag 'default-image' %>
+      <% end %>
+    </div>
 
-<p>
-  <strong>Estoque:</strong>
-  <%= @product.stock %>
-</p>
+    <div class="product-info">
+      <h1 class="product-title">
+        <%= @product.name %>
+      </h1>
 
-<p>
-  <strong>Valor:</strong>
-  <%= @product.value %>
-</p>
+      <p class="product-description">
+        <%= @product.description %>
+      </p>
 
-<p>
-  <strong>Discount:</strong>
-  <%= @product.discount %>
-</p>
+      <h3 class="product-value">
+        <% if @product.discount&.positive? %>
+        <small>
+          <strike><%= @product.value_reais %></strike>
+        </small>
+        <%= @product.value_discounted_reais %>
+        <% else %>
+        <%= @product.value_reais %>
+        <% end %>
+      </h3>
 
-<%= link_to 'Editar', edit_product_path(@product) %> |
-<%= link_to 'Voltar', products_path %>
+      <% if @product.tension&.positive? %>
+      <p>
+        Tensão:
+        <%= @product.tension %>
+      </p>
+      <% end %>
+
+      <p>
+        <% if @product.stock.positive? %>
+        <%= @product.stock %> disponíveis
+        <% else %>
+        Sem estoque
+        <% end %>
+      </p>
+
+      <div class="product-buttons">
+        <a href="#" class="button success">Adicionar ao carrinho</a>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <%= render 'index/best_seller' %>
+
+  </div>
+
+</div>

@@ -15,7 +15,11 @@
     <nav class="navigation">
       <ul class="list-unstyled navigation-list">
         <li class="navigation-item">
-          <a href="#" class="small-scale">Minha conta</a>
+          <% if user_signed_in? %>
+            <%= link_to 'Minha conta', edit_user_registration_path, class: 'small-scale' %>
+          <% else %>
+            <%= link_to 'Entrar', new_user_session_path, class: 'small-scale' %>
+          <% end %>
         </li>
         <li class="navigation-item">
           <a href="#" class="small-scale">Programa de pontos</a>
